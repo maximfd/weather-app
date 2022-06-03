@@ -5,11 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Weather App</title>
 </head>
 
 <body>
+    <div class="weather-card">
+        <div class="main-section">
+            <div class="date">03 June, Friday 18:00</div>
+            <div class="location">
+                <img class="location__icon" src="./icons/location.png" alt="">
+                <h2 class="city">Barcelona</h2>
+                <span>,</span>
+                <p class="country">Spain</p>
+            </div>
+            <div class="temp-values">
+                <div class="current-temp">
+                    <div class="temperature">
+                        <div class="temperature__value">23</div>
+                        <div class="temperature__degree">o</div>
+                        <div class="temperature__unit">C</div>
+                    </div>
+                </div>
+                <div class="feels-temp">
+                    <p>feels like</p>
+                    <div class="temperature feels-like">
+                        <div class="temperature__value">25</div>
+                        <div class="temperature__degree">o</div>
+                        <div class="temperature__unit">C</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tags">
+                <div class="tags__item main">sunny</div>
+                <div class="tags__item">cloudy</div>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <div class="weather-image">
+                <img src="./icons/weather/sunny-cloudy.png" alt="">
+            </div>
+            <div class="parameters">
+                <div class="param">
+                    <img src="./icons/humidity.png" alt="" class="param-icon">
+                    <p class="param-value">26 <span class="unit">%</span></p>
+                </div>
+                <div class="param">
+                    <img src="./icons/wind.png" alt="" class="param-icon">
+                    <p class="param-value">6 <span class="unit">m/sec</span></p>
+                </div>
+                <div class="param">
+                    <img src="./icons/barometer.png" alt="" class="param-icon">
+                    <p class="param-value">6.5 <span class="unit">hPa</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
