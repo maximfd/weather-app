@@ -7,66 +7,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
     <title>Weather App</title>
 </head>
 
 <body>
     <div class="weather-card">
-        <div class="main-section">
-            <div class="date">03 June, Friday 18:00</div>
-            <div class="location">
-                <img class="location__icon" src="./icons/location.png" alt="">
-                <h2 class="city">Barcelona</h2>
-                <span>,</span>
-                <p class="country">Spain</p>
-            </div>
-            <div class="temp-values">
-                <div class="current-temp">
-                    <div class="temperature">
-                        <div class="temperature__value">23</div>
-                        <div class="temperature__degree">o</div>
-                        <div class="temperature__unit">C</div>
-                    </div>
-                </div>
-                <div class="feels-temp">
-                    <p>feels like</p>
-                    <div class="temperature feels-like">
-                        <div class="temperature__value">25</div>
-                        <div class="temperature__degree">o</div>
-                        <div class="temperature__unit">C</div>
-                    </div>
+        <header class="header">
+            <div class="header__info">
+                <div class="date">03 June, Friday 18:00</div>
+                <div class="location">
+                    <span class="location__icon material-symbols-outlined">
+                        near_me
+                    </span>
+                    <h2 class="location__title">Barcelona, <span class="country">Spain</span></h2>
                 </div>
             </div>
 
-            <div class="tags">
-                <div class="tags__item main">sunny</div>
-                <div class="tags__item">cloudy</div>
+            <div class="header__search">
+                <input class="search-bar" type="text" placeholder="Search">
             </div>
-        </div>
+        </header>
 
-        <div class="details-section">
-            <div class="weather-image">
-                <img src="./icons/weather/sunny-cloudy.png" alt="">
+        <main class="main">
+            <div class="main__info">
+                <div class="temperature">
+                    <div class="temp temp_main">
+                        <div class="temp__value">23</div>
+                        <div class="temp__unit">
+                            <span class="degree">o</span>
+                            <span class="unit">C</span>
+                        </div>
+                    </div>
+                    <div class="feels-like">
+                        <div class="label">FEELS LIKE</div>
+                        <div class="temp temp_secondary">
+                            <div class="temp__value">26</div>
+                            <div class="temp__unit">
+                                <span class="degree">o</span>
+                                <span class="unit">C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <div class="tag tag_main">sunny</div>
+                    <div class="tag">cloudy</div>
+                </div>
             </div>
-            <div class="parameters">
-                <div class="param">
-                    <img src="./icons/humidity.png" alt="" class="param-icon">
-                    <p class="param-value">26 <span class="unit">%</span></p>
+            <div class="main__image">
+                <img src="./icons/weather/sunny-cloudy.png" alt="sunny cloudy">
+            </div>
+            <div class="main__details">
+                <div class="feature">
+                    <div class="feature__legend">
+                        <span class="feature__icon material-symbols-outlined">
+                            rainy
+                        </span>
+                        <h3 class="feature__title">Rain</p>
+                    </div>
+                    <div class="feature__value">0.2%</div>
                 </div>
-                <div class="param">
-                    <img src="./icons/wind.png" alt="" class="param-icon">
-                    <p class="param-value">6 <span class="unit">m/sec</span></p>
+                <div class="feature">
+                    <div class="feature__legend">
+                        <span class="feature__icon material-symbols-outlined">
+                            air
+                        </span>
+                        <h3 class="feature__title">Wind</p>
+                    </div>
+                    <div class="feature__value">10km/h</div>
                 </div>
-                <div class="param">
-                    <img src="./icons/barometer.png" alt="" class="param-icon">
-                    <p class="param-value">6.5 <span class="unit">hPa</span></p>
+                <div class="feature">
+                    <div class="feature__legend">
+                        <span class="feature__icon material-symbols-outlined">
+                            humidity_mid
+                        </span>
+                        <h3 class="feature__title">Hum</p>
+                    </div>
+                    <div class="feature__value">54%</div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 
     <script src="config.js"></script>
