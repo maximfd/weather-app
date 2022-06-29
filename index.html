@@ -25,7 +25,7 @@
                     <span class="location__icon material-symbols-outlined">
                         near_me
                     </span>
-                    <h2 class="location__title">Barcelona, <span class="country">Spain</span></h2>
+                    <h2 class="location__title">Barcelona, <span class="country">ES</span></h2>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
             <div class="main__info">
                 <div class="temperature">
                     <div class="temp temp_main">
-                        <div class="temp__value">23</div>
+                        <div class="temp__value" data-temp="main">23</div>
                         <div class="temp__unit">
                             <span class="degree">o</span>
                             <span class="unit">C</span>
@@ -47,7 +47,7 @@
                     <div class="feels-like">
                         <div class="label">FEELS LIKE</div>
                         <div class="temp temp_secondary">
-                            <div class="temp__value">26</div>
+                            <div class="temp__value" data-temp="feels">26</div>
                             <div class="temp__unit">
                                 <span class="degree">o</span>
                                 <span class="unit">C</span>
@@ -57,21 +57,23 @@
                 </div>
                 <div class="tags">
                     <div class="tag tag_main">sunny</div>
-                    <div class="tag">cloudy</div>
+                    <!-- <div class="tag">cloudy</div> -->
                 </div>
             </div>
             <div class="main__image">
-                <img src="./icons/weather/sunny-cloudy.png" alt="sunny cloudy">
+                <img src="./icons/02d.svg" alt="sunny cloudy">
             </div>
             <div class="main__details">
                 <div class="feature">
                     <div class="feature__legend">
                         <span class="feature__icon material-symbols-outlined">
-                            rainy
+                            humidity_mid
                         </span>
-                        <h3 class="feature__title">Rain</p>
+                        <h3 class="feature__title">Humidity</p>
                     </div>
-                    <div class="feature__value">0.2%</div>
+                    <div class="feature__value" data-feature="humidity">
+                        54<span class="feature__unit">%</span>
+                    </div>
                 </div>
                 <div class="feature">
                     <div class="feature__legend">
@@ -80,17 +82,23 @@
                         </span>
                         <h3 class="feature__title">Wind</p>
                     </div>
-                    <div class="feature__value">10km/h</div>
+                    <div class="feature__value" data-feature="wind">
+                        10<span class="feature__unit">m/s</span>
+                    </div>
                 </div>
                 <div class="feature">
                     <div class="feature__legend">
                         <span class="feature__icon material-symbols-outlined">
-                            humidity_mid
+                            thermometer
                         </span>
-                        <h3 class="feature__title">Hum</p>
+                        <h3 class="feature__title">Pressure</p>
                     </div>
-                    <div class="feature__value">54%</div>
+                    <div class="feature__value" data-feature="pressure">
+                        1020<span class="feature__unit">hPa</span>
+                    </div>
                 </div>
+
+
             </div>
         </main>
     </div>

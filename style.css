@@ -19,7 +19,7 @@ body {
 
 .weather-card {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     min-height: 200px;
     padding: 3em;
     background-color: #fff;
@@ -174,6 +174,7 @@ body {
 img {
     width: 100%;
     max-width: 240px;
+    max-height: 160px;
 }
 
 .main__details {
@@ -194,6 +195,7 @@ img {
     align-items: center;
     margin-right: auto;
     opacity: 0.6;
+    flex: 1.5;
 }
 
 .feature__icon {
@@ -208,4 +210,12 @@ img {
 
 .feature__value {
     font-size: 1em;
+    margin-left: 0.4em;
+    flex: 1;
+}
+
+.feature__unit {
+    opacity: 0.6;
+    font-size: 0.8em;
+    margin-left: 0.2em;
 }
