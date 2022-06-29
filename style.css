@@ -219,3 +219,73 @@ img {
     font-size: 0.8em;
     margin-left: 0.2em;
 }
+
+@media (max-width: 900px) {
+    .weather-card {
+        height: 100%;
+        border-radius: 0;
+        padding: 2em;
+    }
+}
+
+
+@media (max-width: 760px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .location__title {
+        font-size: 1.5rem;
+    }
+
+    .country {
+        font-size: 1.3rem;
+    }
+
+    .header__search {
+        margin-top: 1em;
+    }
+
+    .main {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .main__details {
+        grid-column: 1 / span 3;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .feature {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 440px) {
+    .weather-card {
+        padding: 1em;
+    }
+
+    .main {
+        padding: 1em;
+    }
+
+    .location__title {
+        font-size: 1rem;
+    }
+
+    .country {
+        font-size: 0.8rem;
+    }
+
+    .tag {
+        font-size: 0.7rem;
+    }
+
+    .feature {
+        font-size: 0.9rem;
+    }
+}
