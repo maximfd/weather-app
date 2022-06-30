@@ -61,8 +61,11 @@ body {
     font-weight: 400;
 }
 
-.header__search {
+.error-message {
+    font-size: 0.8rem;
+    color: rgb(190, 6, 6);
     margin-bottom: 0.5em;
+    visibility: hidden;
 }
 
 .search-bar {

@@ -13,6 +13,7 @@ const mainIcon = document.querySelector('.main__image > img')
 const searchForm = document.querySelector('.header__search')
 const searchInput = document.querySelector('.search-bar')
 const dateTime = document.querySelector('.date')
+const errorMsg = document.querySelector('.error-message')
 
 function getWeather(location) {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${key}&units=metric`,
@@ -22,11 +23,14 @@ function getWeather(location) {
             const weatherObj = processData(data)
             displayData(weatherObj)
         })
-        .catch(error => console.log('ERROR'))
-    // TODO meaningful error message
+        .catch(error => {
+            errorMsg.style.visibility = 'visible'
+        })
 }
 
 function displayData(weatherObj) {
+    errorMsg.style.visibility = 'hidden'
+
     locationTitle.innerHTML = `${weatherObj.city}, <span class="country">${weatherObj.country}</span>`
 
     mainTempValue.textContent = weatherObj.currentTemp
@@ -81,5 +85,5 @@ function renderDateTime() {
     setInterval(renderDateTime, 1000)
 }
 
-getWeather('Amsterdam')
+// getWeather('Amsterdam')
 renderDateTime()
