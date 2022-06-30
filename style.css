@@ -76,6 +76,10 @@ body {
     color: #65747C;
 }
 
+.search-bar:focus {
+    outline: 2px solid #A8C8ED;
+}
+
 .search-bar::placeholder {
     opacity: 0.6;
 }

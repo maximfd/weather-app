@@ -8,6 +8,8 @@ const windValue = document.querySelector('[data-feature="wind"]')
 const humidityValue = document.querySelector('[data-feature="humidity"]')
 const tagTitle = document.querySelector('.tag_main')
 const mainIcon = document.querySelector('.main__image > img')
+const searchForm = document.querySelector('.header__search')
+const searchInput = document.querySelector('.search-bar')
 
 function getWeather(location) {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${key}&units=metric`,
@@ -51,6 +53,15 @@ function processData(data) {
         tag: data.weather[0].description,
         icon: data.weather[0].icon,
     }
+}
+
+searchForm.addEventListener('submit', searchUserWeather)
+
+function searchUserWeather(e) {
+    e.preventDefault()
+    getWeather(searchInput.value)
+    searchInput.value = ''
+    searchInput.blur()
 }
 
 getWeather('Amsterdam')
