@@ -1,4 +1,6 @@
 const key = config.API_KEY
+const DAY_NAME = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const MONTH_NAME = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 const locationTitle = document.querySelector('.location__title')
 const mainTempValue = document.querySelector('[data-temp="main"]')
@@ -10,6 +12,7 @@ const tagTitle = document.querySelector('.tag_main')
 const mainIcon = document.querySelector('.main__image > img')
 const searchForm = document.querySelector('.header__search')
 const searchInput = document.querySelector('.search-bar')
+const dateTime = document.querySelector('.date')
 
 function getWeather(location) {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${key}&units=metric`,
@@ -64,4 +67,19 @@ function searchUserWeather(e) {
     searchInput.blur()
 }
 
+function renderDateTime() {
+    let currentDate = new Date()
+    const month = MONTH_NAME[currentDate.getMonth()]
+    const weekDay = DAY_NAME[currentDate.getDay()]
+    const day = currentDate.getDate()
+
+    const hour = currentDate.getHours()
+    const minutes = currentDate.getMinutes()
+
+    dateTime.innerHTML = `${day} ${month}, ${weekDay} | ${hour}:${minutes}`
+
+    setInterval(renderDateTime, 1000)
+}
+
 getWeather('Amsterdam')
+renderDateTime()
