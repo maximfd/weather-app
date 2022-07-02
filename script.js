@@ -36,7 +36,7 @@ function getWeather(lat, lon) {
             const currentWeather = processCurrentWeather(weather.current)
             displayCurrentWeather(currentWeather)
             const forecast = processForecastWeather(weather.daily)
-            console.log(forecast);
+            displayForecastWeather(forecast)
         })
         .catch(error => {
             console.log(error);
@@ -56,11 +56,17 @@ function processCurrentWeather(data) {
 }
 
 function processForecastWeather(arr) {
-    return arr.map(element => {
+    // cut current day from forecast
+    const newArr = arr.slice(1, arr.length)
+
+    return newArr.map(element => {
+        const date = new Date(element.dt * 1000)
         return {
-            date: new Date(element.dt * 1000),
-            temp: element.temp.day,
+            date: `${date.getDate()} ${MONTH_NAME[date.getMonth()]}`,
+            day: DAY_NAME[date.getDay()],
+            temp: Math.round(element.temp.day),
             hum: element.humidity,
+            wind: element.wind_speed,
             pressure: element.pressure,
             icon: element.weather[0].icon,
             tag: element.weather[0].description
@@ -96,6 +102,72 @@ function displayCurrentWeather(weatherObj) {
     humidityValue.innerHTML = `${weatherObj.hum}<span class="feature__unit">%</span>`
 }
 
+const forecast = document.querySelector('.forecast__slider')
+
+function displayForecastWeather(arr) {
+    forecast.innerHTML = ''
+    arr.forEach(day => {
+        const card = document.createElement('div')
+        card.classList.add('card')
+        card.innerHTML = `
+        
+        <div class="card__header">
+                        <div class="date">${day.date}</div>
+                        <div class="day">${day.day}</div>
+                    </div>
+                     
+                    <div class="card__main">
+
+                    <div class="card__info">
+                        <div class="card__temp temp">
+                            <div class="temp__value">${day.temp}</div>
+                            <div class="temp__unit">
+                                <span class="degree">o</span>
+                                <span class="unit">C</span>
+                            </div>
+                        </div>
+                        <div class="card__tag">${day.tag}</div>                      
+                    </div>
+                    <div class="card__img">
+                            <img src="./icons/${day.icon}.svg" alt="${day.tag}">
+                        </div>
+                    </div>
+                    <div class="card__details">
+                        <div class="feature">
+                            <div class="feature__legend">
+                                <span class="feature__icon material-symbols-outlined">
+                                    humidity_mid
+                                </span>
+                            </div>
+                            <div class="feature__value" data-feature="humidity">
+                                ${day.hum}<span class="feature__unit">%</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__legend">
+                                <span class="feature__icon material-symbols-outlined">
+                                    air
+                                </span>
+                            </div>
+                            <div class="feature__value" data-feature="wind">
+                                ${day.wind}<span class="feature__unit">m/s</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__legend">
+                                <span class="feature__icon material-symbols-outlined">
+                                    thermometer
+                                </span>
+                            </div>
+                            <div class="feature__value" data-feature="pressure">
+                                ${day.pressure}<span class="feature__unit">hPa</span>
+                            </div>
+                        </div>
+                    </div>`
+        forecast.append(card)
+    });
+}
+
 function renderDateTime() {
     let currentDate = new Date()
     const month = MONTH_NAME[currentDate.getMonth()]
@@ -110,5 +182,5 @@ function renderDateTime() {
     setInterval(renderDateTime, 1000)
 }
 
-// getWeather('Amsterdam')
-// renderDateTime()
+getCoords('Amsterdam')
+renderDateTime()
