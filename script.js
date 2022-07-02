@@ -96,6 +96,7 @@ function displayCurrentWeather(weatherObj) {
     tagTitle.textContent = weatherObj.tag
 
     mainIcon.src = `./icons/${weatherObj.icon}.svg`
+    if (weatherObj.icon === '01d') mainIcon.parentElement.classList.add('sun-light')
 
     pressureValue.innerHTML = `${weatherObj.pressure}<span class="feature__unit">hPa</span>`
     windValue.innerHTML = `${weatherObj.wind}<span class="feature__unit">m/s</span>`
@@ -128,7 +129,7 @@ function displayForecastWeather(arr) {
                         </div>
                         <div class="card__tag">${day.tag}</div>                      
                     </div>
-                    <div class="card__img">
+                    <div class="card__img ${(day.icon === '01d') ? 'sun-light' : ''}">
                             <img src="./icons/${day.icon}.svg" alt="${day.tag}">
                         </div>
                     </div>
@@ -182,5 +183,5 @@ function renderDateTime() {
     setInterval(renderDateTime, 1000)
 }
 
-getCoords('Amsterdam')
-renderDateTime()
+// getCoords('Amsterdam')
+// renderDateTime()

@@ -313,6 +313,7 @@ img {
 .card__img {
     flex: 1;
     align-self: center;
+    position: relative;
 }
 
 .card__img img {
@@ -389,4 +390,36 @@ img {
     .feature {
         font-size: 0.9rem;
     }
+}
+
+.main__image {
+    position: relative;
+}
+
+.sun-light::after {
+    content: '';
+    width: 140px;
+    height: 134px;
+    display: block;
+    background-color: #FFEF9A;
+    border-radius: 65px;
+    top: 12px;
+    left: 29px;
+    position: absolute;
+    filter: blur(42px);
+    z-index: 1;
+}
+
+.card__img.sun-light::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-color: #FFEF9A;
+    border-radius: 30px;
+    top: 0px;
+    left: 23px;
+    position: absolute;
+    filter: blur(17px);
+    z-index: 1;
 }
