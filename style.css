@@ -176,6 +176,7 @@ body {
 
 .main__image {
     padding: 0.5em;
+    position: relative;
 }
 
 img {
@@ -338,13 +339,17 @@ img {
 }
 
 @media (max-width: 900px) {
+    body {
+        background-image: none;
+    }
+
     .weather-card {
         height: 100%;
         border-radius: 0;
         padding: 2em;
+        box-shadow: none;
     }
 }
-
 
 @media (max-width: 760px) {
     .header {
@@ -358,10 +363,6 @@ img {
 
     .country {
         font-size: 1.3rem;
-    }
-
-    .header__search {
-        margin-top: 1em;
     }
 
     .main {
@@ -379,6 +380,10 @@ img {
         flex-direction: column;
         align-items: center;
     }
+
+    .main__image.sun-light::after {
+        display: none;
+    }
 }
 
 @media (max-width: 440px) {
@@ -390,14 +395,6 @@ img {
         padding: 1em;
     }
 
-    .location__title {
-        font-size: 1rem;
-    }
-
-    .country {
-        font-size: 0.8rem;
-    }
-
     .tag {
         font-size: 0.7rem;
     }
@@ -405,10 +402,6 @@ img {
     .feature {
         font-size: 0.9rem;
     }
-}
-
-.main__image {
-    position: relative;
 }
 
 .sun-light::after {
