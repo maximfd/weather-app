@@ -16,7 +16,7 @@ const dateTime = document.querySelector('.date')
 const errorMsg = document.querySelector('.error-message')
 
 function getCoords(location) {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${key}`,
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${key}`,
         { mode: 'cors' })
         .then(response => response.json())
         .then(location => {
@@ -183,5 +183,5 @@ function renderDateTime() {
     setInterval(renderDateTime, 1000)
 }
 
-// getCoords('Amsterdam')
-// renderDateTime()
+getCoords('Amsterdam')
+renderDateTime()
