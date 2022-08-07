@@ -111,7 +111,7 @@ body {
 }
 
 .temperature {
-    font-size: clamp(3rem, 10vw + 1rem, 6rem);
+    font-size: 6rem;
     display: flex;
     align-items: center;
 }
@@ -391,6 +391,10 @@ img {
         justify-content: space-around;
     }
 
+    .temperature {
+        font-size: 5rem;
+    }
+
     .feature {
         flex-direction: column;
         align-items: center;
@@ -401,7 +405,7 @@ img {
     }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
     .weather-card {
         padding: 1em;
     }
@@ -412,6 +416,10 @@ img {
 
     .main {
         padding: 1em;
+    }
+
+    .temperature {
+        font-size: 4rem;
     }
 
     .tag {
