@@ -22,13 +22,13 @@
 <defs>
 <filter id="filter0_b_410_2230" x="-16.0378" y="-31.0378" width="157.076" height="116.114" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feGaussianBlur in="BackgroundImage" stdDeviation="15.5189"/>
+<feGaussianBlur stdDeviation="15.5189"/>
 <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_410_2230"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_410_2230" result="shape"/>
 </filter>
 <filter id="filter1_b_410_2230" x="-16.0378" y="-31.0378" width="157.076" height="116.114" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feGaussianBlur in="BackgroundImage" stdDeviation="15.5189"/>
+<feGaussianBlur stdDeviation="15.5189"/>
 <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_410_2230"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_410_2230" result="shape"/>
 </filter>
@@ -39,13 +39,13 @@
 </filter>
 <filter id="filter3_b_410_2230" x="-31.0378" y="-8.03783" width="136.076" height="103.076" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feGaussianBlur in="BackgroundImage" stdDeviation="15.5189"/>
+<feGaussianBlur stdDeviation="15.5189"/>
 <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_410_2230"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_410_2230" result="shape"/>
 </filter>
 <filter id="filter4_b_410_2230" x="-31.0378" y="-8.03783" width="136.076" height="103.076" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feGaussianBlur in="BackgroundImage" stdDeviation="15.5189"/>
+<feGaussianBlur stdDeviation="15.5189"/>
 <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_410_2230"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_410_2230" result="shape"/>
 </filter>
