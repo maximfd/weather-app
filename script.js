@@ -170,19 +170,14 @@ function displayForecastWeather(arr) {
     });
 }
 
-function renderDateTime() {
+function renderDate() {
     let currentDate = new Date()
     const month = MONTH_NAME[currentDate.getMonth()]
     const weekDay = DAY_NAME[currentDate.getDay()]
     const day = currentDate.getDate()
 
-    const hour = currentDate.getHours()
-    const minutes = currentDate.getMinutes()
-
-    dateTime.innerHTML = `${day} ${month}, ${weekDay} | ${hour}:${minutes}`
-
-    setInterval(renderDateTime, 1000)
+    dateTime.innerHTML = `${day} ${month}, ${weekDay}`
 }
 
 getCoords('Amsterdam')
-renderDateTime()
+renderDate()
