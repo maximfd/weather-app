@@ -96,6 +96,7 @@ function displayCurrentWeather(weatherObj) {
     tagTitle.textContent = weatherObj.tag
 
     mainIcon.src = `./icons/${weatherObj.icon}.svg`
+    mainIcon.parentElement.classList.remove('sun-light')
     if (weatherObj.icon === '01d') mainIcon.parentElement.classList.add('sun-light')
 
     pressureValue.innerHTML = `${weatherObj.pressure}<span class="feature__unit">hPa</span>`
